@@ -6,6 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
+RUN pwd && ls -l
 COPY ["Shop/Shop.csproj", "Shop/"]
 RUN dotnet restore "Shop/Shop.csproj"
 COPY . .
